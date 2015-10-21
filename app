@@ -110,15 +110,15 @@ public class app
 				nome = input.nextLine();
 				System.out.println("Didite o nome da pessoa: ");
 				nome = input.nextLine();
-				for(i=0; i<=20; i++)
+				for(i=0; i<20; i++)
 				{
-					if(p[i].getNome().equals(nome))
+					if(p[i]  != null &&  p[i].getNome().equals(nome))
 					{
 						p[i].visualizarPerfil();
 						break;
 					}
-					System.out.println("Perfil não encontrado!");
 				}
+				System.out.println("Perfil não encontrado!");
 				break;
 			}
 				
