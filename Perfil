@@ -1,0 +1,123 @@
+
+public class Perfil 
+{
+	private String nome;
+	private String usuario;
+	private String funcao;
+	private String linguagens;
+	private String metodologia;
+	private String localizacao;
+	private char sexo;
+	private String formacao;
+	private Postagem[] p;
+	
+	public Perfil(String nome, String usuario, String funcao, String linguagens, String metodologia, String localizacao, char sexo, String formacao) 
+	{
+		this.nome = nome;
+		this.usuario = usuario;
+		this.funcao = funcao;
+		this.linguagens = linguagens;
+		this.metodologia = metodologia;
+		this.localizacao = localizacao;
+		this.sexo = sexo;
+		this.formacao = formacao;
+	}
+
+	public String getLinguagens() 
+	{
+		return linguagens;
+	}
+
+	public void setLinguagens(String linguagens) 
+	{
+		this.linguagens = linguagens;
+	}
+
+	public String getMetodologia() 
+	{
+		return metodologia;
+	}
+
+	public void setMetodologia(String metodologia) 
+	{
+		this.metodologia = metodologia;
+	}
+
+	public String getNome() 
+	{
+		return nome;
+	}
+
+	public void setNome(String nome) 
+	{
+		this.nome = nome;
+	}
+
+	public String getFuncao() 
+	{
+		return funcao;
+	}
+
+	public void setFuncao(String funcao) 
+	{
+		this.funcao = funcao;
+	}
+
+	public String getLocalizacao() 
+	{
+		return localizacao;
+	}
+
+	public void setLocalizacao(String localizacao) 
+	{
+		this.localizacao = localizacao;
+	}
+
+	public char getSexo() 
+	{
+		return sexo;
+	}
+
+	public void setSexo(char sexo) 
+	{
+		this.sexo = sexo;
+	}
+
+	public String getFormacao() 
+	{
+		return formacao;
+	}
+
+	public void setFormacao(String formacao) 
+	{
+		this.formacao = formacao;
+	}
+
+	public String getUsuario() 
+	{
+		return usuario;
+	}
+
+	public Postagem[] getP() 
+	{
+		return p;
+	}
+
+	public void setP(Postagem[] p) 
+	{
+		this.p = p;
+	}
+	
+	public void visualizarPerfil()
+	{
+		System.out.println(this.usuario);
+		System.out.println("Nome: " + this.nome);
+		System.out.println("Função: " + this.funcao);
+		System.out.println("Linguagens: " + this.linguagens);
+		System.out.println("Metodologia: " + this.metodologia);
+		System.out.println("Localização: " + this.metodologia);
+		System.out.println("Sexo: " + this.sexo);
+		System.out.println("Formação: " + this.formacao);
+	}
+	
+}
