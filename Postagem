@@ -1,0 +1,44 @@
+
+public class Postagem 
+{
+	private int postagemid;
+	private String post;
+	private Comentario[] c;
+	
+	public Postagem(int postagemid, String post)
+	{
+		this.postagemid = postagemid;
+		this.post = post;
+	}
+
+	public int getPostagemid() 
+	{
+		return postagemid;
+	}
+
+	public void setPostagemid(int postagemid) 
+	{
+		this.postagemid = postagemid;
+	}
+
+	public String getPost() 
+	{
+		return post;
+	}
+
+	public void setPost(String post) 
+	{
+		this.post = post;
+	}
+
+	public Comentario[] getC() 
+	{
+		return c;
+	}
+
+	public void setC(Comentario[] c) 
+	{
+		this.c = c;
+	}
+	
+}
