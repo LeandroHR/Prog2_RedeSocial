@@ -6,7 +6,7 @@ public class app
 		Perfil[] p = new Perfil[20];
 		//int cont = 0;
 		int i = 0;
-		int ip = 0;
+		//int ip = 0;
 		Scanner input = new Scanner(System.in);
 		int controller = 0;
 		String nome;
@@ -21,7 +21,7 @@ public class app
 		
 		do
 		{
-			System.out.println("1 - Cadastrar perfil");
+			System.out.println("\n1 - Cadastrar perfil");
 			System.out.println("2 - Excluir perfil");
 			System.out.println("3 - Escrever postagem");
 			System.out.println("4 - Comentar postagem");
@@ -128,6 +128,25 @@ public class app
 					if(p[i]  != null &&  p[i].getNome().equals(nome))
 					{
 						p[i].visualizarPerfil();
+						break;
+					}
+				}
+				if(p[i] == null)
+				{
+					System.out.println("Perfil não encontrado!");
+				}
+				break;
+				
+			case 7:
+				System.out.println("Digite o nome do perfil no qual você deseja visualizar as postagens: ");
+				nome = input.nextLine();
+				nome = input.nextLine();
+				
+				for(i=0; i<19; i++)
+				{
+					if(p[i]  != null &&  p[i].getNome().equals(nome))
+					{
+						p[i].listarPostagens();
 						break;
 					}
 				}
