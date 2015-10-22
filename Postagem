@@ -36,4 +36,13 @@ public class Postagem
 		this.ic++;
 	}
 	
+	public void listarComentarios()
+	{
+		int i = 0;
+		while(c[i] != null)
+		{
+			System.out.println(c[i].getComentario());
+			i++;
+		}
+	}
 }
