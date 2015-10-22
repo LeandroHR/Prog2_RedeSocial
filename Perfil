@@ -188,7 +188,7 @@ public class Perfil
 				solicitacoes[aux].visualizarPerfil();
 				System.out.println("Deseja aceitar a solicitação de amizade? s/n");
 				resposta = input.next().charAt(0);
-				while(resposta != 's' || resposta != 'n')
+				while(resposta != 's' && resposta != 'n')
 				{
 					resposta = input.next().charAt(0);
 				}
@@ -201,9 +201,23 @@ public class Perfil
 					if(aux2 <= 18 )
 					{
 						amizades[aux2] = solicitacoes[aux];
+						solicitacoes[aux] = null;
 					}
 				}
+				solicitacoes[aux] = null;
 				
+			}
+		}
+	}
+	
+	public void visualizarAmizades()
+	{
+		int aux;
+		for(aux=0; aux<=18; aux++)
+		{
+			if(amizades[aux] != null)
+			{
+				amizades[aux].visualizarPerfil();
 			}
 		}
 	}
