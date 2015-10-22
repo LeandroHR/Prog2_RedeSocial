@@ -1,6 +1,7 @@
-
+import java.util.Scanner;
 public class Perfil 
 {
+	Scanner input = new Scanner(System.in);
 	private String nome;
 	private String usuario;
 	private String funcao;
@@ -12,6 +13,8 @@ public class Perfil
 	private Postagem[] p = new Postagem[99];
 	private int ip = 0;
 	private int i = 0;
+	private Perfil[] solicitacoes = new Perfil[19];
+	private Perfil[] amizades = new Perfil[19];
 	
 	public Perfil(String nome, String usuario, String funcao, String linguagens, String metodologia, String localizacao, char sexo, String formacao) 
 	{
@@ -23,6 +26,11 @@ public class Perfil
 		this.localizacao = localizacao;
 		this.sexo = sexo;
 		this.formacao = formacao;
+	}
+	
+	public Perfil()
+	{
+		
 	}
 
 	public String getLinguagens() 
@@ -100,9 +108,9 @@ public class Perfil
 		return usuario;
 	}
 
-	public Postagem[] getP() 
+	public Postagem getP(int i) 
 	{
-		return p;
+		return p[i-1];
 	}
 
 	public void setP(Postagem[] p) 
@@ -133,13 +141,70 @@ public class Perfil
 		this.ip++;
 	}
 	
+	public void excluirPost(int i)
+	{
+		p[i-1] = null;
+	}
+	
 	public void listarPostagens()
 	{
 		i = 0;
 		while(p[i] != null)
 		{
-			System.out.println("Postagem: " + p[i].getPost());
+			System.out.println("Postagem " + i+1 + ": " + p[i].getPost());
+			System.out.println("Comentarios: ");
+			p[i].listarComentarios();
+			System.out.println("-----------------------------");
 			i++;
+		}
+	}
+	
+	public void addSolicitacao(Perfil p)
+	{
+		int aux = 0;
+		while(solicitacoes[aux] != null)
+		{
+			aux++;
+		}
+		if(aux<=18)
+		{
+			solicitacoes[aux] = p;
+		}
+	}
+	
+	public void accSolicitacao()
+	{
+		int aux = 0;
+		int aux2 = 0;
+		char resposta;
+		while(solicitacoes[aux] != null)
+		{
+			if(aux > 18)
+			{
+				System.out.println("Não há solicitações");
+				break;
+			}else
+			{
+				solicitacoes[aux].visualizarPerfil();
+				System.out.println("Deseja aceitar a solicitação de amizade? s/n");
+				resposta = input.next().charAt(0);
+				while(resposta != 's' || resposta != 'n')
+				{
+					resposta = input.next().charAt(0);
+				}
+				if(resposta == 's')
+				{
+					while(amizades[aux2] != null)
+					{
+						aux2++;
+					}
+					if(aux2 <= 18 )
+					{
+						amizades[aux2] = solicitacoes[aux];
+					}
+				}
+				
+			}
 		}
 	}
 	
