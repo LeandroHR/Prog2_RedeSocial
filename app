@@ -62,7 +62,7 @@ public class app
 				
 				while(p[i] != null)
 				{
-					if(i > 20)
+					if(i >= 19)
 					{
 						System.out.println("Não é possível cadastrar mais perfis.");
 						break;
@@ -83,7 +83,7 @@ public class app
 				nome = input.nextLine();
 				nome = input.nextLine();
 				
-				for(i=0; i<=20; i++)
+				for(i=0; i<19; i++)
 				{
 					if(p[i].getNome().equals(nome))
 					{
@@ -104,7 +104,7 @@ public class app
 				System.out.println("Escreva o nome do perfil no qual deseja postar: ");
 				nome = input.nextLine();
 				
-				for(i=0; i<20; i++)
+				for(i=0; i<19; i++)
 				{
 					if(p[i]  != null &&  p[i].getNome().equals(nome))
 					{
@@ -112,14 +112,18 @@ public class app
 						break;
 					}
 				}
-				System.out.println("Perfil não encontrado!");
+				if(p[i] == null)
+				{
+					System.out.println("Perfil não encontrado!");
+				}
+				break;
 				
 			case 6:
 				i = 0;
 				nome = input.nextLine();
 				System.out.println("Didite o nome da pessoa: ");
 				nome = input.nextLine();
-				for(i=0; i<20; i++)
+				for(i=0; i<19; i++)
 				{
 					if(p[i]  != null &&  p[i].getNome().equals(nome))
 					{
@@ -127,7 +131,10 @@ public class app
 						break;
 					}
 				}
-				System.out.println("Perfil não encontrado!");
+				if(p[i] == null)
+				{
+					System.out.println("Perfil não encontrado!");
+				}
 				break;
 			}
 				
