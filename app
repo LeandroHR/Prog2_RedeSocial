@@ -6,6 +6,7 @@ public class app
 		Perfil[] p = new Perfil[20];
 		//int cont = 0;
 		int i = 0;
+		int ip = 0;
 		Scanner input = new Scanner(System.in);
 		int controller = 0;
 		String nome;
@@ -16,6 +17,7 @@ public class app
 		String localizacao;
 		char sexo;
 		String formacao;
+		String post;
 		
 		do
 		{
@@ -29,7 +31,7 @@ public class app
 			System.out.println("8 - Visualizar amizades");
 			System.out.println("9 - Solicitar amizade");
 			System.out.println("10 - Cancelar amizade");
-			System.out.println("99 - Sair");
+			System.out.println("99 - Sair\n");
 			
 			controller = input.nextInt();
 			
@@ -94,16 +96,23 @@ public class app
 			
 			case 3:
 				i = 0;
-				System.out.println("Digite o nome do perfil: ");
+				
+				System.out.println("Ecreva uma postagem: ");
+				post = input.nextLine();
+				post = input.nextLine();
+				
+				System.out.println("Escreva o nome do perfil no qual deseja postar: ");
 				nome = input.nextLine();
 				
-				for(i=0; i<=20; i++)
+				for(i=0; i<20; i++)
 				{
-					if(p[i].getNome().equals(nome))
+					if(p[i]  != null &&  p[i].getNome().equals(nome))
 					{
-						
+						p[i].criarPost(post);
+						break;
 					}
 				}
+				System.out.println("Perfil não encontrado!");
 				
 			case 6:
 				i = 0;
