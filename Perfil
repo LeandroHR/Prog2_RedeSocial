@@ -11,6 +11,7 @@ public class Perfil
 	private String formacao;
 	private Postagem[] p = new Postagem[99];
 	private int ip = 0;
+	private int i = 0;
 	
 	public Perfil(String nome, String usuario, String funcao, String linguagens, String metodologia, String localizacao, char sexo, String formacao) 
 	{
@@ -111,14 +112,14 @@ public class Perfil
 	
 	public void visualizarPerfil()
 	{
-		System.out.println(this.usuario);
+		System.out.println("\n" + this.usuario);
 		System.out.println("Nome: " + this.nome);
 		System.out.println("Função: " + this.funcao);
 		System.out.println("Linguagens: " + this.linguagens);
 		System.out.println("Metodologia: " + this.metodologia);
 		System.out.println("Localização: " + this.metodologia);
 		System.out.println("Sexo: " + this.sexo);
-		System.out.println("Formação: " + this.formacao);
+		System.out.println("Formação: " + this.formacao + "\n");
 	}
 	
 	public void aumentarIp()
@@ -140,6 +141,16 @@ public class Perfil
 	{
 		this.p[ip] = new Postagem(post);
 		this.ip++;
+	}
+	
+	public void listarPostagens()
+	{
+		i = 0;
+		while(p[i] != null)
+		{
+			System.out.println(p[i].getPost());
+			i++;
+		}
 	}
 	
 }
