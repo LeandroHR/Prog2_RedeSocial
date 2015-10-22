@@ -2,7 +2,8 @@
 public class Postagem 
 {
 	private String post;
-	private Comentario[] c;
+	private Comentario[] c = new Comentario[99];
+	private int ic = 0;
 	
 	public Postagem(String post)
 	{
@@ -27,6 +28,12 @@ public class Postagem
 	public void setC(Comentario[] c) 
 	{
 		this.c = c;
+	}
+	
+	public void criarComent(String comentario)
+	{
+		this.c[ic] = new Comentario(comentario);
+		this.ic++;
 	}
 	
 }
