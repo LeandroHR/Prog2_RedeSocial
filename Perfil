@@ -10,6 +10,7 @@ public class Perfil
 	private char sexo;
 	private String formacao;
 	private Postagem[] p;
+	private int ip = 0;
 	
 	public Perfil(String nome, String usuario, String funcao, String linguagens, String metodologia, String localizacao, char sexo, String formacao) 
 	{
@@ -118,6 +119,27 @@ public class Perfil
 		System.out.println("Localização: " + this.metodologia);
 		System.out.println("Sexo: " + this.sexo);
 		System.out.println("Formação: " + this.formacao);
+	}
+	
+	public void aumentarIp()
+	{
+		this.ip++;
+	}
+	
+	public void diminuirIp()
+	{
+		this.ip--;
+	}
+	
+	public int getIp()
+	{
+		return this.ip;
+	}
+	
+	public void criarPost(String post)
+	{
+		this.p[ip] = new Postagem(post);
+		this.ip++;
 	}
 	
 }
