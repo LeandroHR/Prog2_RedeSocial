@@ -59,7 +59,7 @@ public class app
 				{
 					System.out.println("Sexo (M)asculino / (F)eminino: ");
 					sexo = input.next().charAt(0);
-				}while(sexo != 'M' || sexo != 'M');
+				}while(sexo != 'M' && sexo != 'F');
 				System.out.println("Digite a sua formação: ");
 				formacao = input.nextLine();
 				formacao = input.nextLine();
@@ -205,6 +205,26 @@ public class app
 					if(p[i]  != null &&  p[i].getNome().equals(nome))
 					{
 						p[i].listarPostagens();
+						break;
+					}
+				}
+				if(p[i] == null)
+				{
+					System.out.println("Perfil não encontrado!");
+				}
+				break;
+				
+			case 8:
+				System.out.println("Digite o nome do perfil que você deseja ver os amigos: ");
+				nome = input.nextLine();
+				nome = input.nextLine();
+				
+				for(i=0; i<19; i++)
+				{
+					if(p[i]  != null &&  p[i].getNome().equals(nome))
+					{
+						System.out.println("Amigos de " + p[i].getNome());
+						p[i].visualizarAmizades();
 						break;
 					}
 				}
