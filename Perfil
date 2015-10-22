@@ -122,16 +122,6 @@ public class Perfil
 		System.out.println("Formação: " + this.formacao + "\n");
 	}
 	
-	public void aumentarIp()
-	{
-		this.ip++;
-	}
-	
-	public void diminuirIp()
-	{
-		this.ip--;
-	}
-	
 	public int getIp()
 	{
 		return this.ip;
@@ -148,7 +138,7 @@ public class Perfil
 		i = 0;
 		while(p[i] != null)
 		{
-			System.out.println(p[i].getPost());
+			System.out.println("Postagem: " + p[i].getPost());
 			i++;
 		}
 	}
