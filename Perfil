@@ -9,7 +9,7 @@ public class Perfil
 	private String localizacao;
 	private char sexo;
 	private String formacao;
-	private Postagem[] p;
+	private Postagem[] p = new Postagem[99];
 	private int ip = 0;
 	
 	public Perfil(String nome, String usuario, String funcao, String linguagens, String metodologia, String localizacao, char sexo, String formacao) 
